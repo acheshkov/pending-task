@@ -11,7 +11,7 @@ import Database.Redis.Redis
 
 
 getTasks :: IO [Task]
-getTasks = return $ replicate 20 testTask
+getTasks = return $ replicate 1000 testTask
 
 
 saveKeyValue :: Key -> Value -> IO ()
