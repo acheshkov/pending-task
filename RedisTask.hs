@@ -1,6 +1,7 @@
 module RedisTask 
 (
-	getTasks
+	getTasks,
+	testTask
 )
 where
 
@@ -10,8 +11,8 @@ import Database.Redis.Redis
 
 
 
-getTasks :: IO [Task]
-getTasks = return $ replicate 1000 testTask
+getTasks :: Int -> IO [Task]
+getTasks taskCount = return $ replicate taskCount testTask
 
 
 saveKeyValue :: Key -> Value -> IO ()
